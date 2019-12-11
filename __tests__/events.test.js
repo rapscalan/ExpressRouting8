@@ -54,7 +54,6 @@ describe('event routes', () => {
     return request(app)
       .post('/api/v1/events')
       .send({
-        //recipeId: '1234',
         recipeId: recipe1._id,
         dateOfEvent: Date.now(),
         notes: 'It went well',
@@ -63,7 +62,7 @@ describe('event routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          recipeId: recipe1._id.toString(),
+          recipeId: res.body.recipeId.toString(),
           dateOfEvent: expect.any(String),
           notes: 'It went well',
           rating: 4,
@@ -102,7 +101,7 @@ describe('event routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          recipeId: recipe1._id.toString(),
+          recipeId: res.body.recipeId.toString(),
           dateOfEvent: expect.any(String),
           notes: 'It went well',
           rating: 4,
@@ -125,7 +124,7 @@ describe('event routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          recipeId: recipe1._id.toString(),
+          recipeId: res.body.recipeId.toString(),
           dateOfEvent: expect.any(String),
           notes: 'It went well',
           rating: 5,
@@ -147,7 +146,7 @@ describe('event routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          recipeId: recipe1._id.toString(),
+          recipeId: res.body.recipeId.toString(),
           dateOfEvent: expect.any(String),
           notes: 'It went well',
           rating: 4,

@@ -100,6 +100,7 @@ describe('recipe routes', () => {
             'put dough on cookie sheet',
             'bake for 10 minutes'
           ],
+          events: expect.any(Array),
           __v: 0
         });
       });
