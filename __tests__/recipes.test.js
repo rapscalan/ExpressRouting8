@@ -158,6 +158,7 @@ describe('recipe routes', () => {
     return request(app)
       .delete(`/api/v1/recipes/${recipe._id}`)
       .then(res => {
+        console.log(res.body);
         expect(res.body).toEqual({
           _id: expect.any(String),
           name: 'cookies',
