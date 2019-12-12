@@ -101,7 +101,21 @@ describe('event routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          recipeId: res.body.recipeId.toString(),
+          recipeId: {
+            _id: expect.any(String),
+            __v: 0,
+            name: 'Cookies',
+            ingredients: [
+              { name: 'flour', amount: 1, measurement: 'cup',
+                _id: expect.any(String) }
+            ],
+            directions: [
+              'preheat oven to 375',
+              'mix ingredients',
+              'put dough on cookie sheet',
+              'bake for 10 minutes'
+            ]
+          },
           dateOfEvent: expect.any(String),
           notes: 'It went well',
           rating: 4,
